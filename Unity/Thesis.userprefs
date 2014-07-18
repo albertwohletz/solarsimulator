@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MoveCamera.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Moon.cs" Line="10" Column="20" />
+      <File FileName="Assets/Scripts/GuiManager.cs" Line="62" Column="32" />
+      <File FileName="../Projects/brainzandgainz/Assets/Scripts/GUIController.cs" Line="130" Column="60" />
+      <File FileName="Assets/Scripts/MoveCamera.cs" Line="25" Column="65" />
+      <File FileName="Assets/Scripts/PhysicsEngine.cs" Line="15" Column="36" />
+      <File FileName="Assets/Scripts/PhysicsProperties.cs" Line="14" Column="55" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

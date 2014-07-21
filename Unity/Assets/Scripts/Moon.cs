@@ -4,14 +4,18 @@ using System.Collections;
 public class Moon : MonoBehaviour {
 	public GameObject planet;
 	public Vector3 velocity;
+	private PhysicsProperties planetphys;
 	// Use this for initialization
 	void Start () {
-		float y = Mathf.Sqrt ((planet.GetComponent<PhysicsProperties>().mass + this.GetComponent<PhysicsProperties>().mass) / (Mathf.Abs(transform.localPosition.x)));
+		float distance = Vector3.Distance (planet.transform.position, transform.position);
+		float y = Mathf.Sqrt ((planet.GetComponent<PhysicsProperties>().mass + this.GetComponent<PhysicsProperties>().mass) / (distance));
 		velocity = new Vector3 (0, y, 0);
+		planetphys = planet.GetComponent<PhysicsProperties> ();
 	}
-	
+
+	void Update(){}
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		ApplyForces ();
 		UpdatePosition ();
 	}	
@@ -22,7 +26,8 @@ public class Moon : MonoBehaviour {
 	}
 
 	void UpdatePosition(){
-		transform.Translate(velocity * Time.deltaTime);
+		transform.position = transform.position + (velocity + planetphys.velocity) * Time.deltaTime;
+		//transform.Translate(velocity * Time.deltaTime);
 		//transform.Translate (planet.GetComponent<PhysicsProperties> ().velocity * Time.deltaTime); 
 	}
 }

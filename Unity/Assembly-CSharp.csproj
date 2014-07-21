@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{2A924A7C-E451-ED1A-4566-45E45C19CFEC}</ProjectGuid>
+	<ProjectGuid>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -53,7 +53,14 @@
      <Compile Include="Assets\Scripts\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\PhysicsEngine.cs" />
      <Compile Include="Assets\Scripts\PhysicsProperties.cs" />
+     <Compile Include="Assets\Scripts\SmoothFollow.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{2662B409-6332-1E56-D797-C9025C53BDD6}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{4464F9EF-777D-E971-944B-0D2B43AA417D}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

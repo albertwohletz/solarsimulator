@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PhysicsEngine : MonoBehaviour {
 	public GameObject[] bodies;
-
+	
+	const float days_per_second = 2.60714285714286f;
 	// Use this for initialization
 	void Start () {
 		bodies = GameObject.FindGameObjectsWithTag ("Planet");
@@ -21,10 +22,14 @@ public class PhysicsEngine : MonoBehaviour {
 		foreach (GameObject body in bodies) { 
 			ApplyForces (body);
 		}
-
+		
+	const float days_per_second = 2.60714285714286f;
 		// Update Positions
 		foreach (GameObject body in bodies) { 
-			body.transform.Translate(body.GetComponent<PhysicsProperties>().velocity * Time.deltaTime);
+			//body.transform.Translate(body.GetComponent<PhysicsProperties>().velocity * Time.deltaTime);
+			body.transform.position = body.transform.position + body.GetComponent<PhysicsProperties>().velocity * Time.deltaTime;
+			body.transform.Rotate(Vector3.forward , Time.deltaTime / body.GetComponent<PhysicsProperties>().rotation_period * days_per_second * 360.0f, Space.World );
+			//body.transform.Rotate(Vector3.up , Time.deltaTime / body.GetComponent<PhysicsProperties>().rotation_period * days_per_second * 360.0f, Space.World );
 		}
 
 		// Update Rotations

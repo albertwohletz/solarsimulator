@@ -119,7 +119,10 @@ public class GuiManager : MonoBehaviour {
 							"Mass: 328.5E21 kg (0.055 Earth mass)\n"+
 							"Distance from Sun: 35,980,000 miles (57,910,000 km)\n"+
 							"Length of year: 88d\n"+
-							"Length of day: 58d 15h 30m ";
+							"Length of day: 58d 15h 30m\n"+
+							"Avg Temp: 332 F° (167 C°)\n" +
+							"Max Temp: 801 F° (427 C°)\n" +
+							"Min Temp: -79 F° (-173 C°)\n";
 
 				} else if (type == DescriptionType.COMPOSITION){
 						focusstr = "42% Molecular oxygen\n" +
@@ -131,13 +134,16 @@ public class GuiManager : MonoBehaviour {
 				}
 		} else if(focus == "Venus"){
 			if (type == DescriptionType.DEFAULT){
-				focusstr = "Venus is the second closest planet to the sun.\n" + 
+				focusstr = "Venus has an extremely thick CO2-rich atmosphere.  \n" +
 					"Radius: 3,760 miles (6,052 km)\n" +
 					"Surface area: 177.7 million sq miles (460.2 million km²)\n" +
 					"Mass: 4.867E24 kg (0.815 Earth mass)\n" +
+					"Distance from Sun: 67,240,000 miles (108,200,000 km)\n"+
 					"Length of day: 116 days 18 hours 0 minutes\n"+
-					"Length of year: 225 days\n" +
-					"Distance from Sun: 67,240,000 miles (108,200,000 km)";
+						"Length of year: 225 days\n" +
+						"Avg Temp: 867 °F (463 °C)\n"+
+						"Max Temp: 870 °F (465 °C)\n"+
+						"Min Temp: 864 °F (462 °C)\n";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "96.5% carbon dioxide\n" +
 					"3.5% nitrogen\n" +
@@ -156,8 +162,11 @@ public class GuiManager : MonoBehaviour {
 					focusstr = "Radius: 2,106 miles (3,390 km)\n"+
 					"Mass: 639E21 kg (0.107 Earth mass)\n"+
 					"Surface area: 55.91 million sq miles (144.8 million km²)\n"+
-					"Length of day: 1d 0h 40m\n"+
-					"Length of year: 687 days" ;
+					"Length of day: 40 minutes\n"+
+					"Length of year: 687 days\n"+
+					"Avg Temp: -81 °F (-63 °C)\n"+
+					"Max Temp: -287 °F (-177 °C)\n"+
+					"Min Temp: 86 °F (-287 °C)";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "95.97% carbon dioxide\n"+
 				"1.93% argon\n"+
@@ -177,27 +186,70 @@ public class GuiManager : MonoBehaviour {
 			}
 		} else if(focus == "Saturn"){
 			if (type == DescriptionType.DEFAULT){
-				
+				focusstr = "Radius: 36,184 miles (58,232 km)\n"+
+				"Mass: 568.3E24 kg (95.16 Earth mass)\n"+
+				"Surface area: 16.49 billion sq miles (42.7 billion km²)\n"+
+				"Distance from Sun: 890,700,000 miles (1,433,000,000 km)\n"+
+				"Length of day: 10 hours 39 minutes\n" + 
+				"Length of year: 29 years.\n"+
+				"Avg Temp: -81 °F (-63 °C)\n"+
+				"Max Temp: -287 °F (-177 °C)\n"+
+				"Min Temp: 86 °F (-287 °C)";
 			} else if (type == DescriptionType.COMPOSITION){
-				
+				focusstr = "96%	hydrogen (H2)\n" + 
+				"3%	helium (He)\n" + 
+				"0.4%	methane (CH4)\n" + 
+				"0.01%	ammonia (NH3)\n" + 
+				"0.01%	hydrogen deuteride (HD)\n" + 
+				"0.0007%	ethane (C2H6)";
 			}
 		} else if(focus == "Jupiter"){
 			if (type == DescriptionType.DEFAULT){
-				
+				focusstr = "Radius: 43,441 miles (69,911 km)\n" +
+							"Mass: 1.898E27 kg (317.8 Earth mass)\n" +
+							"Surface area: 23.71 billion sq miles (61.42 billion km²)\n" +
+							"Distance from Sun: 483,800,000 miles (778,500,000 km)\n" +
+							"Length of day: 9 hours 56 minutes\n" +
+							"Length of year: 12 years.";
 			} else if (type == DescriptionType.COMPOSITION){
-				
+				focusstr = "89.8%	hydrogen (H2)\n" +
+				"10.2%	helium (He)\n" +
+				"0.3%	methane (CH4)\n" +
+				"0.026%	ammonia (NH3)\n" +
+				"0.003%	hydrogen deuteride (HD)\n" +
+				"0.0006%	ethane (C2H6)\n" +
+				"0.0004%	water (H2O)";
 			}
 		} else if(focus == "Uranus"){
 			if (type == DescriptionType.DEFAULT){
-				
+				focusstr = "Radius: 15,759 miles (25,362 km)\n" +
+						"Mass: 86.81E24 kg (14.54 Earth mass)\n" +
+						"Surface area: 3.121 billion sq miles (8.083 billion km²)\n"+
+						"Distance from Sun: 1,787,000,000 miles (2,877,000,000 km)\n"+
+						"Length of day: 17 hours 14 minutes\n"+
+						"Length of year: 84 years.";
 			} else if (type == DescriptionType.COMPOSITION){
-				
+				focusstr = "83%	hydrogen (H2)\n" +
+							"15%	helium (He)\n" +
+							"2.3%	methane (CH4)\n" +
+							"0.009%\n" +
+							"(0.007–0.015%)	hydrogen deuteride\n";
 			}
 		} else if(focus == "Neptune"){
 			if (type == DescriptionType.DEFAULT){
-				
+				focusstr = 
+					"Radius: 15,299 miles (24,622 km)\n"+
+					"Mass: 102.4E24 kg (17.15 Earth mass)\n"+
+					"Surface area: 2.941 billion sq miles (7.618 billion km²)\n"+
+					"Distance from Sun: 2,798,000,000 miles (4,503,000,000 km)\n"+
+					"Length of day: 16 hours 6 minutes.\n"+
+					"Length of year: 165 years.";
 			} else if (type == DescriptionType.COMPOSITION){
-				
+				focusstr = "80% hydrogen (H2)\n"+
+							"19% helium (He)\n"+
+							"1.5% methane (CH4)\n"+
+							"0.019% hydrogen deuteride (HD)\n"+
+							"0.00015% ethane (C2H6)\n";
 			}
 		}
 

@@ -167,7 +167,7 @@ public class GuiManager : MonoBehaviour {
 					focusstr = "Radius: 2,106 miles (3,390 km)\n"+
 					"Mass: 639E21 kg (0.107 Earth mass)\n"+
 					"Surface area: 55.91 million sq miles (144.8 million km²)\n"+
-					"Length of day: 40 minutes\n"+
+					"Length of day: 1 day 40 minutes\n"+
 					"Length of year: 687 days\n"+
 					"Avg Temp: -81 °F (-63 °C)\n"+
 					"Max Temp: -287 °F (-177 °C)\n"+

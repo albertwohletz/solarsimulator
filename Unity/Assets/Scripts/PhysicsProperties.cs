@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class PhysicsProperties : MonoBehaviour {
-	public float mass = 5;
-	public float rotation_period = 88;
+	public float mass = 5; // mass times 10^24 kgs
+	public float rotation_period = 1; // Length of rotation in days.  1 = 1day, 5 = days, etc. 
 	public Vector3 velocity;
-	private float sun_mass = 1988550.0f;
+	private const float sun_mass = 1988550.0f;
 
 	// Use this for initialization
 	void Start () {

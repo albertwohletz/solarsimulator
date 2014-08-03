@@ -23,21 +23,23 @@ public class PhysicsEngine : MonoBehaviour {
 			ApplyForces (body);
 		}
 		
-	const float days_per_second = 2.60714285714286f;
-		// Update Positions
-		foreach (GameObject body in bodies) { 
-			//body.transform.Translate(body.GetComponent<PhysicsProperties>().velocity * Time.deltaTime);
-			body.transform.position = body.transform.position + body.GetComponent<PhysicsProperties>().velocity * Time.deltaTime;
-			body.transform.Rotate(Vector3.forward , Time.deltaTime / body.GetComponent<PhysicsProperties>().rotation_period * days_per_second * 360.0f, Space.World );
-			//body.transform.Rotate(Vector3.up , Time.deltaTime / body.GetComponent<PhysicsProperties>().rotation_period * days_per_second * 360.0f, Space.World );
-		}
+		const float days_per_second = 2.60714285714286f;
 
-		// Update Rotations
-		/*foreach (GameObject body in bodies){
-			float p = body.GetComponent<PhysicsProperties>().rotation_period;
-			body.transform.Rotate(Vector3.up * Time.deltaTime * 100);
-		}*/
+		// Update Transform
+		foreach (GameObject body in bodies) { 
+			UpdatePosition(body);
+			UpdateRotation(body);
+		}
 	}
+
+	void UpdatePosition(GameObject body){
+		body.transform.position = body.transform.position + body.GetComponent<PhysicsProperties>().velocity * Time.deltaTime;
+	}
+
+	void UpdateRotation(GameObject body){
+		body.transform.Rotate(Vector3.forward , Time.deltaTime / body.GetComponent<PhysicsProperties>().rotation_period * days_per_second * 360.0f, Space.World );
+	}
+
 
 	void ApplyForces(GameObject target){
 		foreach (GameObject body in bodies) {

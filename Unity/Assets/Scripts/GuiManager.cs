@@ -77,13 +77,17 @@ public class GuiManager : MonoBehaviour {
 		string focusstr = "";
 		if(focus == "Earth"){
 			if (type == DescriptionType.DEFAULT){
-				focusstr = "Population: 7.046 billion humans\n" + 
+				focusstr = "Earth is the only known planet to support life.\n"+
+							"Population: 7.046 billion humans\n" + 
 							"Age: 4.54 billion years\n" +
 							"Mass: 5.972E24 kg\n" +
 							"Distance from Sun: 149,600,000 km (92,960,000 miles)\n"+
 							"Mean radius: 6371.0 km\n" +
 							"Year: 365.26 days\n"+
-							"Day: 24 Hours";
+							"Day: 24 Hours\n"+
+							"Avg Temp: 59 F° (15 C°)\n" +
+							"Max Temp: 158 F° (70 C°)\n" +
+							"Min Temp: -128 F° (-89 C°)\n";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "Atmosphere:\n" +
 					"78.08% nitrogen (N2)\n" +
@@ -97,7 +101,8 @@ public class GuiManager : MonoBehaviour {
 				focusstr = "Mass: 1.98855E30 kg, 333,000 Earths.\n " +
 						   "Surface area: 6.09E12 km^2 12000 × Earth.\n" + 
 						   "Age: 4.6 billion years.\n" +
-						   "Remaining Fuel: 5 billion years.";
+						   "Remaining Fuel: 5 billion years.\n"+
+						"Avg Temp of Photosphere: 9941 F° (5505 C°)";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "Hydrogen:	73.46%\n"+
 							"Helium:    24.85%\n"+
@@ -192,9 +197,7 @@ public class GuiManager : MonoBehaviour {
 				"Distance from Sun: 890,700,000 miles (1,433,000,000 km)\n"+
 				"Length of day: 10 hours 39 minutes\n" + 
 				"Length of year: 29 years.\n"+
-				"Avg Temp: -81 °F (-63 °C)\n"+
-				"Max Temp: -287 °F (-177 °C)\n"+
-				"Min Temp: 86 °F (-287 °C)";
+				"Avg Surface Temp: -288 °F (-178 °C)\n";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "96%	hydrogen (H2)\n" + 
 				"3%	helium (He)\n" + 
@@ -210,7 +213,8 @@ public class GuiManager : MonoBehaviour {
 							"Surface area: 23.71 billion sq miles (61.42 billion km²)\n" +
 							"Distance from Sun: 483,800,000 miles (778,500,000 km)\n" +
 							"Length of day: 9 hours 56 minutes\n" +
-							"Length of year: 12 years.";
+						"Length of year: 12 years.\n"+
+						"Avg Surface Temp: -234 °F (-145 °C)";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "89.8%	hydrogen (H2)\n" +
 				"10.2%	helium (He)\n" +
@@ -227,7 +231,8 @@ public class GuiManager : MonoBehaviour {
 						"Surface area: 3.121 billion sq miles (8.083 billion km²)\n"+
 						"Distance from Sun: 1,787,000,000 miles (2,877,000,000 km)\n"+
 						"Length of day: 17 hours 14 minutes\n"+
-						"Length of year: 84 years.";
+						"Length of year: 84 years\n"+
+						"Avg Surface Temp: -371 °F (-224 °C)";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "83%	hydrogen (H2)\n" +
 							"15%	helium (He)\n" +
@@ -243,7 +248,8 @@ public class GuiManager : MonoBehaviour {
 					"Surface area: 2.941 billion sq miles (7.618 billion km²)\n"+
 					"Distance from Sun: 2,798,000,000 miles (4,503,000,000 km)\n"+
 					"Length of day: 16 hours 6 minutes.\n"+
-					"Length of year: 165 years.";
+					"Length of year: 165 years\n"+
+					"Avg Surface Temp: -392 °F (-200 °C)";
 			} else if (type == DescriptionType.COMPOSITION){
 				focusstr = "80% hydrogen (H2)\n"+
 							"19% helium (He)\n"+

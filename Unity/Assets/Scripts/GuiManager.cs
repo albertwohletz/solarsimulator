@@ -11,7 +11,7 @@ enum DescriptionType{
 public class GuiManager : MonoBehaviour {
 	string focus = "";
 	MoveCamera cam;
-	private GUIStyle currentStyle = null;
+	public GUIStyle currentStyle = null;
 	private DescriptionType type = DescriptionType.DEFAULT;
 
 	// Use this for initialization
@@ -26,8 +26,8 @@ public class GuiManager : MonoBehaviour {
 
 	void OnGUI () 
 	{       
-		currentStyle = new GUIStyle( GUI.skin.box );
-		currentStyle.normal.background = MakeTex( 2, 2, new Color( 0f, 1f, 0f, 0.5f ) );
+		//currentStyle = new GUIStyle( GUI.skin.box );
+		//currentStyle.normal.background = MakeTex( 2, 2, new Color( 0f, 1f, 0f, 0.5f ) );
 
 		// Make a background box
 		DrawDescriptionBox ();
@@ -261,7 +261,7 @@ public class GuiManager : MonoBehaviour {
 
 		// Description Box
 		int boxheight = 200;
-		GUI.Box (new Rect (10, Screen.height - boxheight - 40, 500, boxheight), focusstr);
+		GUI.Box (new Rect (10, Screen.height - boxheight - 40, 500, boxheight), focusstr, currentStyle);
 
 		// Buttons
 		if (GUI.Button (new Rect (20,Screen.height - 30,100,30), "Description")) {

@@ -14,15 +14,20 @@ public class MoveCamera : MonoBehaviour {
 	void Update () {
 		cam.transform.rotation = Quaternion.Euler(Vector3.zero);
 		if(Input.GetKeyDown ("a")){
-			cam.transform.Translate(0,0,-1 * cam.transform.localPosition.z/2);
-			UpdateTrailLengths(cam.transform.localPosition.z*trail_scale);
+			ZoomIn();
 		} else if (Input.GetKeyDown("o")){
-			cam.transform.Translate(0,0,cam.transform.localPosition.z/2);
-			UpdateTrailLengths(cam.transform.localPosition.z*trail_scale);
+			ZoomOut();
 		}
-		if (cam.transform.position.z >= 0){
-			//cam.transform.Translate (0,0,cam.transform.position.z * -2);
-		}
+	}
+
+	public void ZoomIn(){ 
+		cam.transform.Translate(0,0,-1 * cam.transform.localPosition.z/2);
+		UpdateTrailLengths(cam.transform.localPosition.z*trail_scale);
+	}
+
+	public void ZoomOut(){
+		cam.transform.Translate(0,0,cam.transform.localPosition.z/2);
+		UpdateTrailLengths(cam.transform.localPosition.z*trail_scale);
 	}
 
 	public void SetFocus(string target) {

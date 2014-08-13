@@ -71,6 +71,13 @@ public class GuiManager : MonoBehaviour {
 			cam.SetFocus("Neptune");
 		} 
 
+		// Make zoom in/out in top right
+		if(GUI.Button(new Rect(Screen.width - 100,5, 100,20), "Zoom In")) {
+			cam.ZoomIn();
+		} 
+		if(GUI.Button(new Rect(Screen.width - 100,25, 100,20), "Zoom Out")) {
+			cam.ZoomOut();
+		} 
 	}
 
 	void DrawDescriptionBox(){

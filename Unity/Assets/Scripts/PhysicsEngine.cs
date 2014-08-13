@@ -37,7 +37,8 @@ public class PhysicsEngine : MonoBehaviour {
 	}
 
 	void UpdateRotation(GameObject body){
-		body.transform.Rotate(Vector3.forward , Time.deltaTime / body.GetComponent<PhysicsProperties>().rotation_period * days_per_second * 360.0f, Space.World );
+		Vector3 y = new Vector3 (0, 1, 0);
+		body.transform.Rotate(y , Time.deltaTime / body.GetComponent<PhysicsProperties>().rotation_period * days_per_second * 360.0f, Space.World );
 	}
 
 

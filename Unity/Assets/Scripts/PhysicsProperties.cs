@@ -6,6 +6,7 @@ public class PhysicsProperties : MonoBehaviour {
 	public float rotation_period = 1; // Length of rotation in days.  1 = 1day, 5 = days, etc. 
 	public Vector3 velocity;
 	private const float sun_mass = 1988550.0f;
+	public bool calculate_velocity = true;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,9 @@ public class PhysicsProperties : MonoBehaviour {
 		if (transform.position.x > 0.0f && tag == "Planet"){
 			y = Mathf.Sqrt ((sun_mass + mass) / (transform.position.x));
 		}
-		velocity = new Vector3 (0, y, 0);
+		if(calculate_velocity){
+			velocity = new Vector3 (0, y, 0);
+		}
 	}
 	
 	// Update is called once per frame

@@ -7,6 +7,7 @@ public class MoveCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera> ();
+		UpdateTrailLengths(cam.transform.localPosition.z*trail_scale);
 	}
 	const float trail_scale = -0.005f;
 	// Update is called once per frame
